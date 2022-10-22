@@ -1,6 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import About from '../components/About';
 import Home from '../components/Home';
+import Service from '../components/Service';
+import Portfolio from '../components/Portfolio';
+import Contact from '../components/Contact';
+import Blog from '../components/Blog';
+import BlogDetails from '../components/BlogdDetails';
 
 function Header() {
     return (
@@ -34,25 +40,25 @@ function Header() {
                                                 <nav>
                                                     <ul id="navigation">
                                                         <li>
-                                                            <a href="index.html">Home</a>
+                                                            <Link to="/">Home</Link>
                                                         </li>
                                                         <li>
-                                                            <a href="about.html">About</a>
+                                                            <Link to="/about">About</Link>
                                                         </li>
                                                         <li>
-                                                            <a href="services.html">Services</a>
+                                                            <Link to="/service">Services</Link>
                                                         </li>
                                                         <li>
-                                                            <a href="portfolio.html">Portfolio</a>
+                                                            <Link to="/portfolio">Portfolio</Link>
                                                         </li>
                                                         <li>
                                                             <a href="#">Page</a>
                                                             <ul className="submenu">
                                                                 <li>
-                                                                    <a href="blog.html">Blog</a>
+                                                                    <Link to="/blog">Blog</Link>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="blog_details.html">Blog Details</a>
+                                                                    <Link to="/blogdetails">Blog Details</Link>
                                                                 </li>
                                                                 <li>
                                                                     <a href="elements.html">Element</a>
@@ -65,7 +71,7 @@ function Header() {
                                                             </ul>
                                                         </li>
                                                         <li>
-                                                            <a href="contact.html">Contact</a>
+                                                            <Link to="/contact">Contact</Link>
                                                         </li>
                                                     </ul>
                                                 </nav>
@@ -88,6 +94,12 @@ function Header() {
 
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
+                    <Route path="/about" element={<About />}></Route>
+                    <Route path="/service" element={<Service />}></Route>
+                    <Route path="/portfolio" element={<Portfolio />}></Route>
+                    <Route path="/contact" element={<Contact />}></Route>
+                    <Route path="/blog" element={<Blog />}></Route>
+                    <Route path="/blogdetails" element={<BlogDetails />}></Route>
                 </Routes>
             </div>
         </Router>
